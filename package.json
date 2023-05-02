@@ -1,0 +1,41 @@
+{
+  "name": "aprp-monorepo",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "postinstall": "npx husky install",
+    "clean": "rm -rf ./packages/logic && mkdir -p ./packages/logic",
+    "proto:build": "npm run clean && cd ./packages/logic && python3 -m grpc_tools.protoc -I../protos --python_out=. --pyi_out=. --grpc_python_out=. ../protos/monitor.proto"
+  },
+  "private": true,
+  "devDependencies": {
+    "@commitlint/cli": "latest",
+    "@commitlint/config-conventional": "latest",
+    "@nx/workspace": "16.0.1",
+    "@nxlv/python": "^15.7.0",
+    "husky": "latest",
+    "lint-staged": "latest",
+    "nx": "16.0.3",
+    "prettier": "latest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/morajlab-aprp/aprp-monorepo.git"
+  },
+  "author": {
+    "name": "Morteza Jamali",
+    "email": "mortezajamali4241@gmail.com",
+    "url": "https://moraj.ir"
+  },
+  "bugs": {
+    "url": "https://github.com/morajlab-aprp/aprp-monorepo/issues"
+  },
+  "homepage": "https://github.com/morajlab-aprp/aprp-monorepo#readme",
+  "lint-staged": {
+    "**/*": "prettier -w -u",
+    "**/*.py": "black"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
+}
