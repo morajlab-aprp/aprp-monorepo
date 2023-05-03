@@ -1,0 +1,12 @@
+[submodule "packages/server"]
+	path = packages/server
+	url = https://github.com/morajlab-aprp/server.git
+[submodule "packages/client"]
+	path = packages/client
+	url = https://github.com/morajlab-aprp/client.git
+[submodule "packages/protos"]
+	path = packages/protos
+	url = https://github.com/morajlab-aprp/protos.git
+[submodule "packages/monitor"]
+	path = packages/monitor
+	url = https://github.com/morajlab-aprp/monitor.git

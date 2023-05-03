@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "postinstall": "npx husky install",
+    "postinstall": "npx husky install && bash ./scripts/install.sh",
     "clean": "rm -rf ./packages/logic && mkdir -p ./packages/logic",
     "proto:build": "npm run clean && cd ./packages/logic && python3 -m grpc_tools.protoc -I../protos --python_out=. --pyi_out=. --grpc_python_out=. ../protos/monitor.proto"
   },
