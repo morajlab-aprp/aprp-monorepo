@@ -6,13 +6,13 @@ version = "1.0.0"
 description = "APRP client project"
 category = "main"
 optional = false
-  python-versions = ">=3.8,<3.12"
+python-versions = ">=3.8,<3.12"
 files = []
 develop = true
 
 [package.dependencies]
 grpcio = "^1.54.0"
-grpcio-tools = "^1.54.0"
+protos = {path = "../../../protos", develop = true}
 
 [package.source]
 type = "directory"
@@ -160,9 +160,9 @@ files = [
 ]
 
 [[package]]
-name = "serverlogic"
+name = "protos"
 version = "1.0.0"
-description = "APRP server logic"
+description = "APRP protobufs"
 category = "main"
 optional = false
 python-versions = ">=3.8,<3.12"
@@ -170,8 +170,25 @@ files = []
 develop = true
 
 [package.dependencies]
-grpcio = "^1.54.0"
 grpcio-tools = "^1.54.0"
+
+[package.source]
+type = "directory"
+url = "packages/protos"
+
+[[package]]
+name = "serverlogic"
+version = "1.0.0"
+description = "APRP server logic"
+category = "main"
+optional = false
+  python-versions = ">=3.8,<3.12"
+files = []
+develop = true
+
+[package.dependencies]
+grpcio = "^1.54.0"
+protos = {path = "../../../protos", develop = true}
 
 [package.source]
 type = "directory"
@@ -197,4 +214,4 @@ testing-integration = ["build[virtualenv]", "filelock (>=3.4.0)", "jaraco.envs (
 [metadata]
 lock-version = "2.0"
   python-versions = ">=3.8,<3.12"
-content-hash = "a0e2fef89b77dcace581acbaa9bd3b7e15a413f070a3f8dacaeca9f617077b8e"
+content-hash = "f0309995bfd7d9c6cbe7d0d9ba7ad61b2c5d01ea9229194c351247afc90281f8"

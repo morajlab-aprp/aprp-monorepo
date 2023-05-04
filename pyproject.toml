@@ -17,6 +17,10 @@ readme = "README.md"
     path = "packages/client/packages/logic"
     develop = true
 
+    [tool.poetry.dependencies.protos]
+    path = "packages/protos"
+    develop = true
+
 [build-system]
 requires = [ "poetry-core==1.1.0" ]
 build-backend = "poetry.core.masonry.api"
